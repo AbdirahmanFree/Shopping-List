@@ -34,7 +34,26 @@
         const unorderedList = document.querySelector("ul");
         const inputField = document.querySelector("input");
         const btn = document.querySelector("button");
-        
+        function btnClick(){
+            let inputValue = inputField.value;
+            inputField.value = ""
+            console.log(inputValue)
+            const listItem = document.createElement("li");
+            const spanText = document.createElement("span");
+            const deleteBtn = document.createElement("button");
+
+            listItem.appendChild(spanText);
+            listItem.appendChild(deleteBtn);
+
+            spanText.textContent = inputValue;
+            deleteBtn.textContent = "Delete"
+            unorderedList.appendChild(listItem)
+            deleteBtn.addEventListener("click",function(){deleteBtn.parentNode.remove()})
+
+            
+        }
+        btn.addEventListener("click", btnClick)
+       
 
 
     </script>
